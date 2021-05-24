@@ -1,4 +1,6 @@
 import React from 'react';
+<script src="https://kit.fontawesome.com/f1108a4306.js" crossorigin="anonymous"></script>
+
 
 class CartItem extends React.Component {
     constructor (){
@@ -20,9 +22,12 @@ class CartItem extends React.Component {
             return {
                 qty: prevState.qty + 1
             }
+        }, () => {
+            console.log('this.state', this.state);
         });
     }
 
+    
     decreaseQuantity = () => {
         this.setState((prevState) => {
             if(prevState.qty > 0){
@@ -57,7 +62,7 @@ class CartItem extends React.Component {
                     }>Qty: {qty}</div>
                     <div className="cart-item-actions">
                         {/* Buttons */}
-                        <img alt="increase" className="action-icons" src="https://img-premium.flaticon.com/png/512/1828/1828926.png?token=exp=1621221536~hmac=4d4f45e2815e46d2d38d683732f93224" 
+                        <img alt="increase" className="action-icons" src="https://img-premium.flaticon.com/png/512/1828/1828926.png?token=exp=1621221536~hmac=4d4f45e2815e46d2d38d683732f93224"
                         onClick={this.increaseQuantity}
                         />
                         <img alt="decrease" className="action-icons" src="https://img-premium.flaticon.com/png/512/992/992683.png?token=exp=1621221483~hmac=82f77bd771178b126f13c0bcaeefae02" 
