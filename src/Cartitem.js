@@ -3,15 +3,7 @@ import React from 'react';
 
 
 class CartItem extends React.Component {
-    constructor (){
-        super();
-        this.state={
-            price: 999,
-            title: 'Mobile phone',
-            qty: 1,
-            img: ''
-        }
-    }
+    
     increaseQuantity = () => {
         // setState form 1
         // this.setState({
@@ -38,7 +30,7 @@ class CartItem extends React.Component {
         });
     }
     render(){
-        const {price, title, qty} = this.state;
+        const {price, title, qty} = this.props.product;
         return (
             <div className="cart-item">
                 <div className="left-block">
@@ -49,7 +41,7 @@ class CartItem extends React.Component {
                         {
                             fontSize: 25
                         }
-                    }>{this.state.title}</div>
+                    }>{title}</div>
                     <div style={
                         {
                             color: "grey"
